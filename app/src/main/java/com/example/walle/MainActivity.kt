@@ -10,14 +10,14 @@ import android.widget.Toast.makeText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.material.datepicker.MaterialTextInputPicker
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerid)
 
@@ -48,6 +48,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager =
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
+
+        val editText = findViewById<TextInputLayout>(R.id.outlinedTextField)
+        val searchbutton = findViewById<Button>(R.id.outlinedButton)
+
+        searchbutton.setOnClickListener(View.OnClickListener {
+
+        })
 
     }
 }

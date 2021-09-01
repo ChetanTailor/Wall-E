@@ -1,16 +1,11 @@
 package com.example.walle
 
-import android.app.ActivityOptions
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.makeText
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -18,7 +13,7 @@ import android.content.Intent as Intent
 
 
 
-class catAdapter(val mainitems:List<catdata>,val context: Context) : RecyclerView.Adapter<catViewholder>() {
+class catAdapter(val mainitems:List<catdata>, val context: Context) : RecyclerView.Adapter<catViewholder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): catViewholder {
@@ -34,7 +29,7 @@ class catAdapter(val mainitems:List<catdata>,val context: Context) : RecyclerVie
             .into(holder.imgview)
 
         holder.imgview.setOnClickListener(View.OnClickListener {
-            val intent = Intent(context?.applicationContext,Wallpapers::class.java)
+            val intent = Intent(context?.applicationContext, Wallpapers::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             intent.putExtra("catstring",mainitems[position].category)
             context.startActivity(intent)
