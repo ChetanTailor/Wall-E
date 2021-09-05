@@ -1,16 +1,14 @@
 package com.example.walle
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
-import android.widget.Toast.makeText
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.google.android.material.datepicker.MaterialTextInputPicker
 import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerid)
 
         val list:ArrayList<catdata> = ArrayList<catdata>()
-
         list.add(catdata("backgrounds",R.drawable.backgrounds))
         list.add(catdata("nature",R.drawable.nature))
         list.add(catdata("religion",R.drawable.religion))
@@ -49,13 +46,79 @@ class MainActivity : AppCompatActivity() {
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
 
+        //for search query only
         val editText = findViewById<TextInputLayout>(R.id.outlinedTextField)
         val searchbutton = findViewById<Button>(R.id.outlinedButton)
-
         searchbutton.setOnClickListener(View.OnClickListener {
-
+            val intent = Intent(applicationContext,Wallpapers::class.java)
+            intent.putExtra("Search", editText.editText?.text.toString() )
+            startActivity(intent);
         })
-
     }
+
+    fun grayscale(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "grayscale" )
+        startActivity(intent);
+    }
+    fun red(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "red" )
+        startActivity(intent);
+    }
+    fun orange(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "orange" )
+        startActivity(intent);
+    }
+    fun green(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "green" )
+        startActivity(intent);
+    }
+    fun yellow(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "yellow" )
+        startActivity(intent);
+    }
+    fun blue(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "blue" )
+        startActivity(intent);
+    }
+    fun lilac(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "lilac" )
+        startActivity(intent);
+    }
+    fun turquoise(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "turquoise" )
+        startActivity(intent);
+    }
+    fun pink(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "pink" )
+        startActivity(intent);
+    }
+    fun white(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "white" )
+        startActivity(intent);
+    }
+    fun black(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "black" )
+        startActivity(intent);
+    }
+    fun brown(view: android.view.View) {
+        val intent = Intent(applicationContext,Wallpapers::class.java)
+        intent.putExtra("colors", "brown" )
+        startActivity(intent);
+    }
+
+
+
+
 }
 

@@ -100,11 +100,13 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
+                android:onClick="grayscale"
                 android:layout_margin="4dp"
                 android:background="@drawable/colorsbackground"
                 android:backgroundTint="#909090" />
 
             <ImageView
+                android:onClick="red"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -112,6 +114,7 @@
                 android:backgroundTint="#FF2626" />
 
             <ImageView
+                android:onClick="orange"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -119,6 +122,7 @@
                 android:backgroundTint="#FFAC1F" />
 
             <ImageView
+                android:onClick="green"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -126,6 +130,7 @@
                 android:backgroundTint="#61FF3A" />
 
             <ImageView
+                android:onClick="yellow"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -133,6 +138,7 @@
                 android:backgroundTint="#F8FF31" />
 
             <ImageView
+                android:onClick="blue"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -140,6 +146,7 @@
                 android:backgroundTint="#3AFFF8" />
 
             <ImageView
+                android:onClick="lilac"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -147,6 +154,7 @@
                 android:backgroundTint="#5136FF" />
 
             <ImageView
+                android:onClick="turquoise"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -154,6 +162,7 @@
                 android:backgroundTint="#ED73E8" />
 
             <ImageView
+                android:onClick="pink"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -161,6 +170,7 @@
                 android:backgroundTint="#FF00B2" />
 
             <ImageView
+                android:onClick="white"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -168,6 +178,7 @@
                 android:backgroundTint="#C6C6C6" />
 
             <ImageView
+                android:onClick="black"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -175,6 +186,7 @@
                 android:backgroundTint="#000000" />
 
             <ImageView
+                android:onClick="brown"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
