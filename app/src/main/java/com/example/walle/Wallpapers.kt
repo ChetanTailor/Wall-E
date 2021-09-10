@@ -1,20 +1,16 @@
 package com.example.walle
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ProgressBar
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.isVisible
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.UrlRewriter
 import com.android.volley.toolbox.Volley
 
 
@@ -28,37 +24,71 @@ class Wallpapers : AppCompatActivity() {
         setContentView(R.layout.activity_wallpapers)
 
         recyclerView = findViewById<RecyclerView>(R.id.wallrecycler)
-        recyclerView.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val filterbutton = findViewById<Button>(R.id.outlinedButton)
+
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         val textView = findViewById<TextView>(R.id.materialTextView)
         val string = intent.getStringExtra("catstring")
         val searchstring = intent.getStringExtra("Search")
         val colors = intent.getStringExtra("colors")
-
-
-
+        
         val key = "22923376-38c09b98913c5869870409abc"
         var url: String = ""
 
         if(string!=null){
             url =
-                "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=vertical&per_page=200&&category=${string}"
+                "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&&category=${string}"
                  textView.setText(string?.toUpperCase())
         }
         else if(searchstring!=null){
             url =
-                "https://pixabay.com/api/?key=${key}&image_type=all&orientation=vertical&per_page=200&q=${searchstring}"
+                "https://pixabay.com/api/?key=${key}&image_type=all&orientation=all&per_page=200&q=${searchstring}"
                  textView.setText(searchstring?.toUpperCase())
         }
         else if(colors!=null){
             url =
-                "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=vertical&per_page=200&colors=${colors}"
+                "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&colors=${colors}"
             textView.setText(colors.toUpperCase())
         }
 
+
+        filterbutton.setOnClickListener(View.OnClickListener {
+
+        })
+
         fetchwalls(url);
 
+        with(recyclerView) {
+
+            if(string!=null){
+                url =
+                    "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&&category=${string}"
+                     textView.setText(string?.toUpperCase())
+            }
+            else if(searchstring!=null){
+                url =
+                    "https://pixabay.com/api/?key=${key}&image_type=all&orientation=all&per_page=200&q=${searchstring}"
+                     textView.setText(searchstring?.toUpperCase())
+            }
+            else if(colors!=null){
+                url =
+                    "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&colors=${colors}"
+                textView.setText(colors.toUpperCase())
+            }
+
+
+//            filterbutton.setOnClickListener(View.OnClickListener {
+//
+//            })
+
+            fetchwalls(url);
+
+
+//            recyclerView.addOnScrollListener();
+
+
+        }
     }
 
     fun fetchwalls(url:String) {
@@ -96,4 +126,6 @@ class Wallpapers : AppCompatActivity() {
         queue.add(jsonObjectRequest)
 
     }
+
 }
+
