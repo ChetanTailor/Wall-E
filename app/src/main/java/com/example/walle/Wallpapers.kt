@@ -78,9 +78,9 @@ class Wallpapers : AppCompatActivity() {
             }
 
 
-//            filterbutton.setOnClickListener(View.OnClickListener {
-//
-//            })
+            filterbutton.setOnClickListener(View.OnClickListener {
+
+            })
 
             fetchwalls(url);
 
