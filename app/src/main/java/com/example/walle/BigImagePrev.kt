@@ -21,7 +21,12 @@ import android.graphics.drawable.BitmapDrawable
 import android.util.Log
 import androidx.core.graphics.drawable.toDrawable
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.TransitionDrawable
+import android.os.Handler
+import android.widget.ProgressBar
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.postDelayed
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class BigImagePrev : AppCompatActivity() {
 
@@ -34,10 +39,19 @@ class BigImagePrev : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.outlinedButton)
         val imageview = findViewById<ShapeableImageView>(R.id.largeimageView)
-
+        val progressBar = findViewById<ProgressBar>(R.id.horizontalpb)
         val largeurl = intent.getStringExtra("largeurl").toString()
 
-        Glide.with(applicationContext).load(largeurl).into(imageview)
+
+        progressBar.progress = 60
+        Handler().postDelayed({
+            progressBar.progress = 80
+            Handler().postDelayed({
+                progressBar.progress = 100
+            }, 1000)
+        },1000)
+
+        Glide.with(applicationContext).load(largeurl).transition(DrawableTransitionOptions.withCrossFade(200)).into(imageview)
 
         val thread = Thread {
             try {

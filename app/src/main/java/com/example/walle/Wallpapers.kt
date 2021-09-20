@@ -59,30 +59,11 @@ class Wallpapers : AppCompatActivity() {
         fetchwalls(url);
 
     }
-//        with(recyclerView) {
-//
-//            if(string!=null){
-//                url =
-//                    "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&&category=${string}"
-//                     textView.setText(string?.toUpperCase())
-//            }
-//            else if(searchstring!=null){
-//                url =
-//                    "https://pixabay.com/api/?key=${key}&image_type=all&orientation=all&per_page=200&q=${searchstring}"
-//                     textView.setText(searchstring?.toUpperCase())
-//            }
-//            else if(colors!=null){
-//                url =
-//                    "https://pixabay.com/api/?key=${key}&image_type=all&safesearch=true&orientation=all&per_page=200&colors=${colors}"
-//                textView.setText(colors.toUpperCase())
-//            }
-//
-//
+
 //            filterbutton.setOnClickListener(View.OnClickListener {
 //
 //            })
 
-//            recyclerView.addOnScrollListener();
 
 
     fun fetchwalls(url:String) {

@@ -41,9 +41,13 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<TextInputLayout>(R.id.outlinedTextField)
         val searchbutton = findViewById<Button>(R.id.outlinedButton)
         searchbutton.setOnClickListener {
-            val intent = Intent(applicationContext, Wallpapers::class.java)
-            intent.putExtra("Search", editText.editText?.text.toString())
-            startActivity(intent)
+            if(editText.editText?.text.toString()==""){
+                Toast.makeText(this, "Field should not be empty", 1000).show()
+            }else{
+                val intent = Intent(applicationContext, Wallpapers::class.java)
+                intent.putExtra("Search", editText.editText?.text.toString())
+                startActivity(intent)
+            }
         }
     }
 

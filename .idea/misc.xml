@@ -17,6 +17,10 @@
         <entry key="..\:/WORKSPACE/AndridStudioProjects/Walle/app/src/main/res/layout/customstyle.xml" value="0.21981981981981982" />
         <entry key="..\:/WORKSPACE/AndridStudioProjects/Walle/app/src/main/res/layout/imgprevres.xml" value="0.21981981981981982" />
         <entry key="..\:/WORKSPACE/AndridStudioProjects/Walle/app/src/main/res/layout/row_item.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/AndroidStudioProjects/Wall-E/app/src/main/res/layout/activity_big_image_prev.xml" value="0.25416666666666665" />
+        <entry key="..\:/WorkSpace/AndroidStudioProjects/Wall-E/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/WorkSpace/AndroidStudioProjects/Wall-E/app/src/main/res/layout/activity_wallpapers.xml" value="0.25416666666666665" />
+        <entry key="..\:/WorkSpace/AndroidStudioProjects/Wall-E/app/src/main/res/layout/imgprevres.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -29,7 +33,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.176" />
+        <option name="scale" value="0.25416666666666665" />
       </ProjectState>
     </option>
   </component>

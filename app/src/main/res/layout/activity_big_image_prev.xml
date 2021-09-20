@@ -8,10 +8,17 @@
     android:background="#59000000"
     tools:context=".BigImagePrev">
 
+    <ProgressBar
+        android:id="@+id/horizontalpb"
+        android:padding="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/largeimageView"
-        android:layout_width="366dp"
-        android:layout_height="0dp"
+        android:layout_width="333dp"
+        android:layout_height="539dp"
         android:layout_gravity="center"
         android:layout_margin="15dp"
         android:layout_weight="1"
@@ -22,24 +29,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/bigimage"
         tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+
+
+
+        />
 
     <Button
         android:id="@+id/outlinedButton"
         style="?attr/materialButtonOutlinedStyle"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/white"
         android:elegantTextHeight="true"
         android:text="@string/set_as_home_screen_wallpaper"
-        android:textColor="#757575"
-        app:cornerRadius="15dp"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </LinearLayout>

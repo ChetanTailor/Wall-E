@@ -36,7 +36,7 @@
         android:id="@+id/outlinedTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:hint="Search"
         android:padding="4dp"
         app:boxStrokeColor="@color/black"
@@ -60,15 +60,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elegantTextHeight="true"
+        android:gravity="center_vertical"
         android:text="Search"
         app:cornerRadius="100dp"
         app:icon="@android:drawable/ic_menu_search"
         app:layout_constraintBottom_toBottomOf="@+id/outlinedTextField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="@+id/outlinedTextField"
         app:layout_constraintTop_toTopOf="@+id/outlinedTextField"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:id="@+id/textView"
@@ -76,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:fontFamily="@font/csms"
-        android:text="Search By Color"
+        android:text="Search By Color Palettes : "
         android:textColor="#323232"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,12 +147,12 @@
                 android:backgroundTint="#3AFFF8" />
 
             <ImageView
-                android:onClick="lilac"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:background="@drawable/colorsbackground"
-                android:backgroundTint="#5136FF" />
+                android:backgroundTint="#9800D8"
+                android:onClick="lilac" />
 
             <ImageView
                 android:onClick="turquoise"

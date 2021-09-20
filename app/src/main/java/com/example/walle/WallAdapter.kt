@@ -9,15 +9,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.cronet.CronetHttpStack
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import javax.security.auth.callback.Callback
 
 
 class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.Adapter<viewholder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.imgprevres,parent,false)
@@ -26,16 +28,35 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
         Glide.with(context)
-            .load(list[position].smallimg)
+            .load(list[position].smallimg).transition(DrawableTransitionOptions.withCrossFade(500))
+            .listener(object :RequestListener<Drawable>{
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    return false
+                }
+
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    dataSource: DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    holder.progressBar.visibility = View.GONE
+                    return false
+                }
+            })
             .into(holder.previmgview11)
 
         holder.previmgview11.setOnClickListener(View.OnClickListener {
-
             val intent = Intent(context?.applicationContext,BigImagePrev::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             intent.putExtra("largeurl",list[position].largeimg)
             context.startActivity(intent)
-
         })
 
 
@@ -49,4 +70,5 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
 
 class viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val previmgview11 = itemView.findViewById<ImageView>(R.id.previmg)
+    val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
 }
