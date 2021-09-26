@@ -25,4 +25,5 @@ class Launcher : AppCompatActivity() {
             finish()
         }, 3000) // 3000 is the delayed time in milliseconds.
     }
+
 }

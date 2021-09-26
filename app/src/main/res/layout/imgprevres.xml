@@ -30,14 +30,48 @@
         app:layout_constraintStart_toStartOf="@+id/previmg"
         app:layout_constraintTop_toTopOf="@+id/previmg" />
 
+    <TextView
+        android:id="@+id/downloadtv"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="8dp"
+        android:text="asdfasdf"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/previmg"
+        app:layout_constraintEnd_toEndOf="@+id/previmg"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="@+id/previmg"
+        app:layout_constraintTop_toTopOf="@+id/previmg"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <!--    <ProgressBar-->
-<!--        android:id="@+id/progressBar"-->
-<!--        android:layout_width="35dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/previmg"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/previmg"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/previmg"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/previmg" />-->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/downloadtv"
+        app:layout_constraintEnd_toStartOf="@+id/downloadtv"
+        app:layout_constraintStart_toStartOf="@+id/previmg"
+        app:layout_constraintTop_toTopOf="@+id/downloadtv"
+        app:srcCompat="@android:drawable/stat_sys_download" />
+
+    <TextView
+        android:id="@+id/viewstv"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="8dp"
+        android:text="6474"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/previmg"
+        app:layout_constraintEnd_toEndOf="@+id/previmg" />
+
+    <ImageView
+        android:id="@+id/viewsimg"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewstv"
+        app:layout_constraintEnd_toStartOf="@+id/viewstv"
+        app:layout_constraintTop_toTopOf="@+id/viewstv"
+        app:srcCompat="@android:drawable/ic_menu_view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

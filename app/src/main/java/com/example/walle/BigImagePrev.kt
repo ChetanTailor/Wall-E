@@ -27,6 +27,9 @@ import android.widget.ProgressBar
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.postDelayed
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class BigImagePrev : AppCompatActivity() {
 
@@ -53,26 +56,22 @@ class BigImagePrev : AppCompatActivity() {
 
         Glide.with(applicationContext).load(largeurl).transition(DrawableTransitionOptions.withCrossFade(200)).into(imageview)
 
-        val thread = Thread {
-            try {
-                button.setClickable(false);
-                val drawable = imageview.drawable
-                var bitmap = drawable.toBitmap()
-                val wallpaperManager = WallpaperManager.getInstance(baseContext)
-                wallpaperManager.setBitmap(bitmap)
 
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+        suspend fun setwallpaper(){
+            button.setClickable(false);
+            val drawable = imageview.drawable
+            var bitmap = drawable.toBitmap()
+            val wallpaperManager = WallpaperManager.getInstance(baseContext)
+            wallpaperManager.setBitmap(bitmap)
         }
 
         button.setOnClickListener(View.OnClickListener {
             if(!this::bitmap.isInitialized) {
-                thread.start()
+                 CoroutineScope(Dispatchers.IO).launch {
+                     setwallpaper()
+                 }
                 Toast.makeText(this, "Wallpaper set!", Toast.LENGTH_SHORT).show()
             }
         })
     }
-
-
 }

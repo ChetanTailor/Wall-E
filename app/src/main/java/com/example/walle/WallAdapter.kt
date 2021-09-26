@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.cronet.CronetHttpStack
 import com.bumptech.glide.Glide
@@ -52,6 +53,8 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
             })
             .into(holder.previmgview11)
 
+        holder.downloadtext.text = list[position].downloads
+
         holder.previmgview11.setOnClickListener(View.OnClickListener {
             val intent = Intent(context?.applicationContext,BigImagePrev::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -71,4 +74,5 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
 class viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val previmgview11 = itemView.findViewById<ImageView>(R.id.previmg)
     val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
+    val downloadtext = itemView.findViewById<TextView>(R.id.downloadtv)
 }

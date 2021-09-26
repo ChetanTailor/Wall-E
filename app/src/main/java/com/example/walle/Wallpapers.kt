@@ -12,6 +12,9 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class Wallpapers : AppCompatActivity() {
@@ -56,7 +59,9 @@ class Wallpapers : AppCompatActivity() {
             Toast.makeText(this, "Under development", Toast.LENGTH_SHORT).show()
         })
 
-        fetchwalls(url);
+        CoroutineScope(Dispatchers.IO).launch {
+            fetchwalls(url);
+       }
 
     }
 
@@ -76,10 +81,9 @@ class Wallpapers : AppCompatActivity() {
                 val totalhits = response.get("totalHits")
                 Toast.makeText(
                     this,
-                    "Total Results :${totalres}  Hits :${totalhits}",
+                    "Wallpapers :${totalres}  Hits :${totalhits}",
                     Toast.LENGTH_SHORT
                 ).show()
-
 
                 val jsonArray = response.getJSONArray("hits")
 
@@ -87,8 +91,9 @@ class Wallpapers : AppCompatActivity() {
                     val jsonObject = jsonArray.getJSONObject(i)
                     val previewurl = jsonObject.get("previewURL").toString()
                     val largeimage = jsonObject.get("largeImageURL").toString()
+                    val downloads = jsonObject.get("downloads").toString()
 
-                    list.add(walldata(previewurl, largeimage))
+                    list.add(walldata(previewurl, largeimage,downloads))
                 }
                 val adapter55 = WallAdapter(list, applicationContext)
                 recyclerView.adapter = adapter55
