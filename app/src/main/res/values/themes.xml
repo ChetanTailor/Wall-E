@@ -15,7 +15,8 @@
         <item name="fontFamily">@font/csms</item>
         <item name="android:fontFamily">@font/csms</item>
         <item name="android:windowContentTransitions">true</item>
-
+        <!--for activities transitions-->
+        <item name="android:windowAnimationStyle" >@style/myanimations</item>
     </style>
 
     <style name="MyCustomFontTextAppearance" parent="TextAppearance.AppCompat.Body1">
@@ -30,6 +31,18 @@
     <style name="bigimage" >
         <item name="cornerSize" >2%</item>
     </style>
+
+
+    //custom animations
+    <style name="myanimations" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation" >@anim/slideinright</item>
+        <item name="android:activityOpenExitAnimation" >@anim/slideoutleft</item>
+        <item name="android:activityCloseEnterAnimation" >@anim/slideinleft</item>
+        <item name="android:activityCloseExitAnimation" >@anim/slideoutright</item>
+
+    </style>
+
+
 
 </resources>
 

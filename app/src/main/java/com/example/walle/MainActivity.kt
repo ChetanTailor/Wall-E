@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val searchbutton = findViewById<Button>(R.id.outlinedButton)
         searchbutton.setOnClickListener {
             if(editText.editText?.text.toString()==""){
-                Toast.makeText(this, "Field should not be empty", 1000).show()
+                Toast.makeText(this, "Field should not be empty", Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(applicationContext, Wallpapers::class.java)
                 intent.putExtra("Search", editText.editText?.text.toString())
