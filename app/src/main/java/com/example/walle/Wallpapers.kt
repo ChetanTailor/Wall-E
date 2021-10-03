@@ -89,11 +89,13 @@ class Wallpapers : AppCompatActivity() {
 
                 for (i in 0..jsonArray.length() - 1) {
                     val jsonObject = jsonArray.getJSONObject(i)
+
                     val previewurl = jsonObject.get("previewURL").toString()
                     val largeimage = jsonObject.get("largeImageURL").toString()
                     val downloads = jsonObject.get("downloads").toString()
+                    val views = jsonObject.get("views").toString()
 
-                    list.add(walldata(previewurl, largeimage,downloads))
+                    list.add(walldata(previewurl, largeimage,downloads,views))
                 }
                 val adapter55 = WallAdapter(list, applicationContext)
                 recyclerView.adapter = adapter55

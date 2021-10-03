@@ -54,6 +54,7 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
             .into(holder.previmgview11)
 
         holder.downloadtext.text = list[position].downloads
+        holder.viewtext.text = list[position].views
 
         holder.previmgview11.setOnClickListener(View.OnClickListener {
             val intent = Intent(context?.applicationContext,BigImagePrev::class.java)
@@ -61,18 +62,16 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
             intent.putExtra("largeurl",list[position].largeimg)
             context.startActivity(intent)
         })
-
-
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
-
 }
 
 class viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val previmgview11 = itemView.findViewById<ImageView>(R.id.previmg)
     val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
     val downloadtext = itemView.findViewById<TextView>(R.id.downloadtv)
+    val viewtext = itemView.findViewById<TextView>(R.id.viewstv)
 }
