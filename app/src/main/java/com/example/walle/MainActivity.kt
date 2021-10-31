@@ -19,11 +19,9 @@ class MainActivity : AppCompatActivity() {
         ,R.drawable.buildings,R.drawable.places,R.drawable.fasion,R.drawable.food,R.drawable.science,R.drawable.business,R.drawable.sports
         ,R.drawable.education)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val list:ArrayList<catdata> = ArrayList()
         for(i in 0..cetegories.size-1){
@@ -35,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         val adapter = catAdapter(list,applicationContext)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-
 
         //for search query only
         val editText = findViewById<TextInputLayout>(R.id.outlinedTextField)

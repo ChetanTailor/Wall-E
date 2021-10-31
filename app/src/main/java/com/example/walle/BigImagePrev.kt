@@ -8,20 +8,8 @@ import android.view.View
 import android.widget.Button
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
-import android.graphics.BitmapFactory
 import android.graphics.Bitmap
 import android.widget.Toast
-import java.lang.Exception
-import java.net.URL
-import android.view.WindowManager
-
-import android.util.DisplayMetrics
-
-import android.graphics.drawable.BitmapDrawable
-import android.util.Log
-import androidx.core.graphics.drawable.toDrawable
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.TransitionDrawable
 import android.os.Handler
 import android.widget.ProgressBar
 import androidx.core.graphics.drawable.toBitmap
@@ -57,7 +45,7 @@ class BigImagePrev : AppCompatActivity() {
         Glide.with(applicationContext).load(largeurl).transition(DrawableTransitionOptions.withCrossFade(200)).into(imageview)
 
 
-        suspend fun setwallpaper(){
+        fun setwallpaper(){
             button.setClickable(false);
             val drawable = imageview.drawable
             var bitmap = drawable.toBitmap()

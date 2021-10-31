@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.cronet.CronetHttpStack
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -63,10 +62,10 @@ class WallAdapter(val list: List<walldata>,val context: Context) : RecyclerView.
             context.startActivity(intent)
         })
     }
-
     override fun getItemCount(): Int {
         return list.size
     }
+
 }
 
 class viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {

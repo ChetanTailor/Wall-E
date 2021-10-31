@@ -1,6 +1,7 @@
 package com.example.walle
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -57,6 +58,7 @@ class Wallpapers : AppCompatActivity() {
 
         filterbutton.setOnClickListener(View.OnClickListener {
             Toast.makeText(this, "Under development", Toast.LENGTH_SHORT).show()
+            showbanner()
         })
 
         CoroutineScope(Dispatchers.IO).launch {
@@ -65,10 +67,9 @@ class Wallpapers : AppCompatActivity() {
 
     }
 
-//            filterbutton.setOnClickListener(View.OnClickListener {
-//
-//            })
+    fun showbanner() {
 
+    }
 
 
     fun fetchwalls(url:String) {
@@ -96,6 +97,8 @@ class Wallpapers : AppCompatActivity() {
                     val views = jsonObject.get("views").toString()
 
                     list.add(walldata(previewurl, largeimage,downloads,views))
+                 //   Log.d("tag","loading error");
+
                 }
                 val adapter55 = WallAdapter(list, applicationContext)
                 recyclerView.adapter = adapter55
